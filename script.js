@@ -71,3 +71,9 @@ function resetGame() {
     currentPlayer = 'X';
     message.textContent = '';
 }
+
+squares.forEach(square => {
+    square.addEventListener('click', handleSquareClick);
+});
+
+restart.addEventListener('click' , resetGame);
