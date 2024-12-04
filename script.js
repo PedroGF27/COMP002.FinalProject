@@ -43,3 +43,11 @@ function handleSquareClick(event) {
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
     }
 }
+
+function checkWinner() {
+    return winCombinations.some(combination => {
+        return combination.every(index => {
+            return board[index] === currentPlayer;
+        });
+    });
+}
