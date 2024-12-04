@@ -51,3 +51,15 @@ function checkWinner() {
         });
     });
 }
+
+function updateScores(winner) {
+    if(winner === 'X') {
+        xWinner++;
+        localStorage.setItem('xWinner', xWinner);
+        xVictory.textContent = xWinner;
+    }  else if (winner === 'O') {
+        oWinner++;
+        localStorage.setItem('oWinner', oWinner);
+        oVictory.textContent = oWinner;
+    }
+}
