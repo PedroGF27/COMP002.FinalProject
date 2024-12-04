@@ -63,3 +63,11 @@ function updateScores(winner) {
         oVictory.textContent = oWinner;
     }
 }
+
+function resetGame() {
+    board.fill(null);
+    squares.forEach(square => square.textContent = '');
+    game = true;
+    currentPlayer = 'X';
+    message.textContent = '';
+}
