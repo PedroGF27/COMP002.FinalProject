@@ -11,3 +11,14 @@ let xWinner = localStorage.getItem('xWinner') ? parseInt(localStorage.getItem('x
 let oWinner = localStorage.getItem('oWinner') ? parseInt(localStorage.getItem('oWinner')) : 0; // Retrieves value of 'oWinner' from local storage. If value exists, converts to integer, if not then default to 0
 xVictory.textContent = xWinner; // Sets text content of 'xVictory' to value of 'xWinner'
 oVictory.textContent = oWinner; // Sets text content of 'oVictory' to value of 'xWinner'
+
+const winCombinations = [ // winning combinations
+    [0, 1, 2], // top row
+    [3, 4, 5], // middle row
+    [6, 7, 8], // bottom row
+    [0, 3, 6], // left column
+    [1, 4, 7], // middle column
+    [2, 5, 8], // right column
+    [0, 4, 8], // top left to bottom right
+    [2, 4, 6]  // top right to bottom left
+];
