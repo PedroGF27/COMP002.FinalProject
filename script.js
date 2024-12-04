@@ -22,3 +22,24 @@ const winCombinations = [ // winning combinations
     [0, 4, 8], // top left to bottom right
     [2, 4, 6]  // top right to bottom left
 ];
+
+function handleSquareClick(event) {
+    const index = event.target.getAttribute('data-index');
+
+    if (!game || board [index]) {
+        return;
+    }
+    board[index] = currentPlayer;
+    event.target.textContent = currentPlayer
+
+    if (checkWinner()) { 
+        game = false;
+        message.textContent = `Player ${currentPlayer} wins!`;
+        updateScores(currentPlayer);
+    } else if (board.every(square => square)) {
+        game = false;
+        message.textContent = 'Tie';    
+    } else {
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    }
+}
